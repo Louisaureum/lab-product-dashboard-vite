@@ -35,4 +35,29 @@ export default [
       ],
     },
   },
+  {
+    files: ['jest.config.js'],
+    languageOptions: {
+      globals: {
+        ...globals.node,
+        module: 'readonly',
+      },
+    },
+  },
+  {
+    files: ['src/__tests__/**/*.{js,jsx}', '**/*.{test,spec}.{js,jsx}'],
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+        test: 'readonly',
+        expect: 'readonly',
+        describe: 'readonly',
+        it: 'readonly',
+        beforeEach: 'readonly',
+        afterEach: 'readonly',
+        vi: 'readonly',
+      },
+    },
+  },
 ]
